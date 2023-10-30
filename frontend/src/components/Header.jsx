@@ -1,6 +1,6 @@
 import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import { AiFillHome } from "react-icons/ai";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
@@ -29,14 +29,22 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar
+        style={{ background: "#483D8B" }}
+        variant="dark"
+        expand="md"
+        collapseOnSelect
+      >
         <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand>
-              <img src={logo} alt="ProShop" />
-              ProShop
-            </Navbar.Brand>
-          </LinkContainer>
+          <Nav>
+            <LinkContainer to="/">
+              <Nav.Link>
+                <h3 className="d-flex ">
+                  <AiFillHome /> ProShop
+                </h3>
+              </Nav.Link>
+            </LinkContainer>
+          </Nav>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
